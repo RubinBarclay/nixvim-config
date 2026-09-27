@@ -12,13 +12,13 @@
         go = [ "golangci-lint" ];
         nix = [ "statix" ];
         lua = [ "selene" ];
-        python = [ "flake8" ];
+        # Python diagnostics come from the ruff LSP server instead (config/lsp/lsp-nvim.nix) —
+        # flake8 here would just duplicate them.
         javascript = [ "eslint_d" ];
         javascriptreact = [ "eslint_d" ];
         typescript = [ "eslint_d" ];
         typescriptreact = [ "eslint_d" ];
         json = [ "jsonlint" ];
-        java = [ "checkstyle" ];
         haskell = [ "hlint" ];
         bash = [ "shellcheck" ];
       };

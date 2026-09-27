@@ -26,15 +26,12 @@
               "help"
               "alpha"
               "dashboard"
-              "neo-tree"
               "Trouble"
               "trouble"
               "lazy"
               "mason"
               "notify"
-              "toggleterm"
-              "lazyterm"
-              "nvterm"
+              "yazi"
             ];
           };
         };

@@ -9,6 +9,9 @@
         enable = true;
         capabilities = "offsetEncoding = 'utf-16'";
         servers = {
+          bashls = {
+            enable = true;
+          };
           clangd = {
             enable = true;
           };
@@ -88,26 +91,9 @@
             enable = true;
           };
 
-          rust_analyzer = {
-            enable = true;
-            installCargo = true;
-            installRustc = true;
-            settings = {
-              checkOnSave = true;
-              check = {
-                command = "clippy";
-              };
-              # inlayHints = {
-              #   enable = true;
-              #   showParameterNames = true;
-              #   parameterHintsPrefix = "<- ";
-              #   otherHintsPrefix = "=> ";
-              # };
-              procMacro = {
-                enable = true;
-              };
-            };
-          };
+          # Rust is handled by plugins.rustaceanvim instead (config/languages/rustaceanvim.nix) —
+          # it can't be enabled alongside this server without duplicate LSP clients attaching.
+          # C# is handled by plugins.roslyn instead (config/languages/roslyn.nix).
         };
         keymaps = {
           silent = true;

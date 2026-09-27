@@ -9,7 +9,7 @@
       settings = {
         alwaysDivideMiddle = true;
         globalstatus = true;
-        ignoreFocus = [ "neo-tree" ];
+        ignoreFocus = [ "yazi" ];
         extensions = [ "fzf" ];
         theme = "auto";
         componentSeparators = {
@@ -87,18 +87,6 @@
       end
       local function is_markdown()
         return vim.bo.filetype == "markdown" or vim.bo.filetype == "asciidoc"
-      end
-      local function navic()
-        return require("nvim-navic").get_location()
-      end
-      local function navic_is_available()
-        return package.loaded["nvim-navic"] and require("nvim-navic").is_available()
-      end
-      local cmd_mode = function()
-        return require("noice").api.status.mode.get()
-      end
-      local show_mode = function()
-        return package.loaded["noice"] and require("noice").api.status.mode.has() or ""
       end
     '';
   };

@@ -34,10 +34,6 @@
             inherit (prev.vimPlugins)
               telescope-fzf-native-nvim
               telescope-ui-select-nvim
-              neotest-java
-              neotest-python
-              neotest-vitest
-              neotest-plenary
               ;
           };
       };

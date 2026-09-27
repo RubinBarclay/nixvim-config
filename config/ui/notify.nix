@@ -33,49 +33,6 @@
          notify(message, level, { title = "conform.nvim" })
        end
 
-       function ToggleLineNumber()
-         if vim.wo.number then
-           vim.wo.number = false
-           show_notification("Line numbers disabled", "info")
-         else
-           vim.wo.number = true
-           vim.wo.relativenumber = false
-           show_notification("Line numbers enabled", "info")
-         end
-       end
-
-       function ToggleRelativeLineNumber()
-         if vim.wo.relativenumber then
-           vim.wo.relativenumber = false
-           show_notification("Relative line numbers disabled", "info")
-         else
-           vim.wo.relativenumber = true
-           vim.wo.number = false
-           show_notification("Relative line numbers enabled", "info")
-         end
-       end
-
-       function ToggleWrap()
-         if vim.wo.wrap then
-           vim.wo.wrap = false
-           show_notification("Wrap disabled", "info")
-         else
-           vim.wo.wrap = true
-           vim.wo.number = false
-           show_notification("Wrap enabled", "info")
-         end
-       end
-
-       function ToggleInlayHints()
-         local is_enabled = vim.lsp.inlay_hint.is_enabled()
-         vim.lsp.inlay_hint.enable(not is_enabled)
-         if is_enabled then
-           show_notification("Inlay Hints disabled", "info")
-         else
-           show_notification("Inlay Hints enabled", "info")
-         end
-       end
-
        vim.api.nvim_create_autocmd("BufReadPost", {
          callback = function()
            local current_dir = vim.fn.getcwd()

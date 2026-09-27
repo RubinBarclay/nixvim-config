@@ -56,14 +56,6 @@
             group = "+code";
           }
           {
-            __unkeyed-1 = "<leader>d";
-            mode = [
-              "n"
-              "v"
-            ];
-            group = "+debug";
-          }
-          {
             __unkeyed-1 = "<leader>f";
             mode = "n";
             group = "+find/file";
@@ -89,28 +81,11 @@
             mode = "n";
             group = "+search";
           }
-          {
-            __unkeyed-1 = "<leader><Tab>";
-            mode = "n";
-            group = "+tab";
-          }
-
-          {
-            __unkeyed-1 = "<leader>t";
-            mode = "n";
-            group = "+test";
-          }
 
           {
             __unkeyed-1 = "<leader>u";
             mode = "n";
             group = "+ui";
-          }
-
-          {
-            __unkeyed-1 = "<leader>w";
-            mode = "n";
-            group = "+windows";
           }
         ];
         win = {

@@ -49,7 +49,7 @@ Neve (snow in portuguese) is a meticulously crafted custom configuration for Nix
 
 - **Extensive Plugin Support:** Benefit from a curated selection of plugins that cover a wide range of programming languages and development tasks. Neve comes with pre-configured plugins to boost your productivity, and you can effortlessly expand its capabilities to suit your specific needs.
 
-- **Blazing Fast Startup:** Non-essential plugins are lazy-loaded with [lz.n](https://github.com/lumen-oss/lz.n) through Nixvim's native lazy loading support (`plugins.lz-n`) — telescope, cmp, dap, neotest, harpoon and friends only load on first use (command, keymap, event or filetype trigger). See the [Performance](#performance) section for measurements.
+- **Blazing Fast Startup:** Non-essential plugins are lazy-loaded with [lz.n](https://github.com/lumen-oss/lz.n) through Nixvim's native lazy loading support (`plugins.lz-n`) — telescope, blink-cmp, harpoon and friends only load on first use (command, keymap, event or filetype trigger). See the [Performance](#performance) section for measurements.
 
 ## Performance
 
@@ -63,7 +63,7 @@ Startup time measured on the author's machine (warm, `nvim --headless --startupt
 
 **~58% faster startup (~104ms saved).**
 
-Where the time went: `sourcing vimrc` (init.lua) dropped 58.7→35.8ms, plugin pack loading 6.2→2.1ms, and eager requires like harpoon (~4ms), neotest-java (~1.1ms) and the telescope extensions (~0.15ms) simply don't run at startup anymore. LSP, treesitter, lualine and other core plugins stay eager by design.
+Where the time went: `sourcing vimrc` (init.lua) dropped 58.7→35.8ms, plugin pack loading 6.2→2.1ms, and eager requires like harpoon (~4ms) and the telescope extensions (~0.15ms) simply don't run at startup anymore. LSP, treesitter, lualine and other core plugins stay eager by design.
 
 To measure it yourself:
 
@@ -96,7 +96,7 @@ programs.nixvim = {
   enable = true;
   imports = [ inputs.Neve.nixvimModule ];
   # Then configure Nixvim as usual, you might have to lib.mkForce some of the settings
-  colorschemes.catppuccin.enable = lib.mkForce false;
+  colorschemes.rose-pine.enable = lib.mkForce false;
   colorschemes.nord.enable = true;
 };
 ```
@@ -121,20 +121,20 @@ For those who aren't familiar with the modular structure of nix, make sure to ch
 
 Basically all you need to do is go to the default.nix file of each directory and enable/disable the mkDefault options.
 
-Lets say you want to enable neo-tree, in order to do that you'd have to go to config/filetrees/default.nix and change its value
+Lets say you want to disable yazi, in order to do that you'd have to go to config/utils/default.nix and change its value
 from
 
 ```nix
-config = lib.mkIf config.filetrees.enable {
-  neo-tree.enable = lib.mkDefault false;
+config = lib.mkIf config.utils.enable {
+  yazi.enable = lib.mkDefault true;
 };
 ```
 
 to
 
 ```nix
-config = lib.mkIf config.filetrees.enable {
-  neo-tree.enable = lib.mkDefault true;
+config = lib.mkIf config.utils.enable {
+  yazi.enable = lib.mkDefault false;
 };
 ```
 

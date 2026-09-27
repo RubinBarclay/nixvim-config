@@ -6,7 +6,6 @@
 {
   imports = [
     ./lualine.nix
-    ./staline.nix
   ];
 
   options = {
@@ -14,6 +13,5 @@
   };
   config = lib.mkIf config.statusline.enable {
     lualine.enable = lib.mkDefault true;
-    staline.enable = lib.mkDefault false;
   };
 }

@@ -55,10 +55,11 @@
             __unkeyed-2 = "prettier";
             stop_after_first = true;
           };
-          java = [ "google-java-format" ];
-          python = [ "black" ];
+          python = [ "ruff_format" ];
           lua = [ "stylua" ];
           nix = [ "nixfmt" ];
+          sh = [ "shfmt" ];
+          bash = [ "shfmt" ];
           markdown = {
             __unkeyed-1 = "prettierd";
             __unkeyed-2 = "prettier";

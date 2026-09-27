@@ -16,6 +16,8 @@
         ensure_installed = [
           "bash"
           "c"
+          "c_sharp"
+          "cpp"
           "html"
           "css"
           "javascript"
@@ -26,7 +28,6 @@
           "luap"
           "nix"
           "rust"
-          "java"
           "markdown"
           "markdown_inline"
           "python"
