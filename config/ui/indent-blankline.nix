@@ -24,8 +24,6 @@
             ];
             filetypes = [
               "help"
-              "alpha"
-              "dashboard"
               "Trouble"
               "trouble"
               "lazy"

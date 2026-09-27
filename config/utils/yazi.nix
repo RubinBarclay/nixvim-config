@@ -13,6 +13,18 @@
         yazi_floating_window_border = "rounded";
       };
     };
+    extraConfigLua = ''
+      vim.api.nvim_create_autocmd("VimEnter", {
+        desc = "Open Yazi instead of an empty buffer when starting nvim with no arguments",
+        callback = function()
+          if vim.fn.argc() == 0 and vim.fn.line2byte("$") == -1 then
+            vim.cmd("Yazi")
+          end
+        end,
+        nested = true,
+      })
+    '';
+
     keymaps = [
       {
         mode = "n";

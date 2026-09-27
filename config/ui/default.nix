@@ -5,7 +5,6 @@
 }:
 {
   imports = [
-    ./alpha.nix
     ./dressing-nvim.nix
     ./indent-blankline.nix
     ./nui.nix
@@ -17,7 +16,6 @@
     ui.enable = lib.mkEnableOption "Enable ui module";
   };
   config = lib.mkIf config.ui.enable {
-    alpha.enable = lib.mkDefault true;
     dressing-nvim.enable = lib.mkDefault true;
     indent-blankline.enable = lib.mkDefault true;
     notify.enable = lib.mkDefault true;
